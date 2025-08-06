@@ -11,24 +11,7 @@ from mmdet3d.models.builder import (
 )
 from mmdet3d.models import FUSIONMODELS
 
-from .bevfusion import BEVFusion
-from mmdet3d.models.backbones import DynamicPillarVFE3D
-
-__all__ = ["BEVFusionDSVT"]
-
-
-@FUSIONMODELS.register_module()
-class BEVFusionDSVT(BEVFusion):
-    def __init__(
-        self,
-        encoders: Dict[str, Any],
-        fuser: Dict[str, Any],
-        decoder: Dict[str, Any],
-        heads: Dict[str, Any],
-        **kwargs,
-    ) -> None:
-        encoders_lidar = encoders.pop("lidar", None)
-        super().__init__(encoders, fuser, decoder, heads, **kwargs)
+from eads, **kwargs)
         # self.encoders["lidar"]["voxelize"] = DynamicPillarVFE3D
 
         if encoders_lidar is not None:
